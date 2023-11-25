@@ -11,6 +11,8 @@
     <RootNamespace>AngryNinjas</RootNamespace>
     <AssemblyName>AngryNinjas</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -21,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -30,6 +33,7 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Game.ico</ApplicationIcon>
@@ -90,6 +94,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.MediaFoundation">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.RawInput">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.RawInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput">
+      <HintPath>..\..\..\..\CocosSharp\MonoGame\MonoGame.Framework\bin\Windows\AnyCPU\Release\SharpDX.XInput.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -1697,6 +1737,7 @@
       <Link>Content\Sounds\whoosh.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="app.config" />
     <None Include="Content\fonts\MarkerFelt-22.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1710,6 +1751,16 @@
       <Link>Content\fonts\MarkerFelt-18.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CocosSharp\box2d\box2d.WindowsDX.csproj">
+      <Project>{b81b6701-7a78-4846-bf6f-04e0591f0f38}</Project>
+      <Name>box2d.WindowsDX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\CocosSharp\src\CocosSharp.WindowsDX.csproj">
+      <Project>{2b5ca459-536c-4b8c-a8c4-b7bec723fe7a}</Project>
+      <Name>CocosSharp.WindowsDX</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
